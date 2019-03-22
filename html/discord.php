@@ -1,3 +1,9 @@
+<?php
+		/****Error Reporting Start****/
+		ini_set('display_errors',1); 
+		error_reporting(E_ALL);
+		/****Error Reporting End****/
+?>
 <!DOCTYPE html>
 <html>
 	
@@ -46,7 +52,7 @@
                      <a class="nav-link" href="discord.php">Discord</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="data.php">Login/Signup</a>
+                     <a class="nav-link" href="login.php">Login/Signup</a>
                   </li>
                </ul>
             </div>
