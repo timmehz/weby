@@ -98,9 +98,9 @@
                <?php echo $message; ?><br>
                <?php echo form_errors($errors); ?>
                <form action = "forms-with-validation.php" method="post" >
-               Username: <input type="text" name="username" value=<?php echo htmlspecialchards($username)?>; >
-               Password: <input type="password" name="password" value="" >
-               Email: <input type="email" name="email" value="" ><br><br>
+               Username: <input type="text" name="username_data" value=<?php echo htmlspecialchards($username)?>; >
+               Password: <input type="password" name="password_data" value="" >
+               Email: <input type="email" name="email_data" value="" ><br><br>
                </form>
             </div>
          </div>
