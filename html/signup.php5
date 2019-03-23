@@ -5,20 +5,6 @@
 		/****Error Reporting End****/
 ?>
 <!DOCTYPE html>
-<html>
-	
-<head>
-	<link rel="shortcut icon" href="imgs/Steam_Rewards_Logo.png" />
-	<title>Steam Rewards-Home</title>
-	<link rel = "stylesheet" href = "css/welcome_website.css">
-</head>
-
-<body>
-	<center><h1 class = "welcome_message">Welcome to Steam Rewards Offical Website!</h1></center>
-</body>
-
-</html>
-<!doctype html>
 <html lang="en">
    <head>
       <!-- Required meta tags -->
@@ -26,9 +12,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <!-- Custom CSS -->
-      <link rel="stylesheet" href="css/style.css">
-      <title>CS 30 - HTML & Bootstrap</title>
+      <link rel="shortcut icon" href="imgs/Steam_Rewards_Logo.png" />
+	  <title>Steam Rewards-Home</title>
+	  <link rel = "stylesheet" href = "css/welcome_website.css">
    </head>
    <body>
       <!-- Navigation -->
@@ -46,13 +32,13 @@
                      <a class="nav-link" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="earn.php">Earn</a>
+                     <a class="nav-link" href="earn.php5">Earn</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="discord.php">Discord</a>
+                     <a class="nav-link" href="discord.php5">Discord</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="login.php">Login/Signup</a>
+                     <a class="nav-link" href="login.php5">Login/Signup</a>
                   </li>
                </ul>
             </div>
@@ -64,6 +50,9 @@
             <div class="row">
             <div class="col" align="center">
                <!-- Content Here -->
+               
+               
+               </form>
             </div>
          </div>
       </section>

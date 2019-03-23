@@ -1,19 +1,66 @@
+<?php
+		/****Error Reporting Start****/
+		ini_set('display_errors',1); 
+		error_reporting(E_ALL);
+		/****Error Reporting End****/
+?>
+<?php
+               require_once("inc/redirect.php");
+               require_once("inc/validation_functions.php");
+               
+               $errors = array();
+               $username_data = "";
+               $password_data = "";
+               $email_data = "";
+               $message = "";
+               
+               if(isset($_POST["submit"])){
+					// form was submitted
+					$username = trim($_POST["username_data"]);
+					$password = trim($_POST["password_data"]);
+					$email = trim($_POST["email_data"]);
+					// validations
+					$fields_required = array("username_data", "password_data", "email_data");
+					
+					foreach($fields_required as $field){
+							$value = trim($_POST[$field]);
+							if(!is_required($value)){
+								$errors["$field"] = ucfirst($field) . " cannot be blank.";
+							}
+					}
+					// using an associative array
+					$fields_with_max_lengths = array("username_data" => 20, "password_data" => 20, "email_data" => 20);
+					validate_max_lengths($fields_with_max_lengths);
+					
+					if (empty($errors)){
+						// try to login
+						if ($username == "{$username_data}" && $password == "{$password_data}" && email == "{$email_data}"){
+							// successful login
+							redirect_to("index.php");
+							} else{
+								$message = "Data you have entered is not correct."
+							} else{
+								$username = "";
+								$password = "";
+								$email = "";
+								$message = "Please login";
+							}
+					}
+			    }
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	  <link rel="shortcut icon" href="imgs/Steam_Rewards_Logo.png" />
-	  <title>Steam Rewards-Home</title>
-	  <link rel = "stylesheet" href = "css/welcome_website.css">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <!-- Custom CSS -->
-      <link rel="stylesheet" href="css/style.css">
-      <title>CS 30 - HTML & Bootstrap</title>
+      <link rel="shortcut icon" href="imgs/Steam_Rewards_Logo.png" />
+	  <title>Steam Rewards-Home</title>
+	  <link rel = "stylesheet" href = "css/welcome_website.css">
    </head>
-   <body bgcolor="#90ee90">
+   <body>
       <!-- Navigation -->
       <header>
          <!-- Fixed Navigation -->
@@ -47,7 +94,14 @@
             <div class="row">
             <div class="col" align="center">
                <!-- Content Here -->
-			   <center><h1 class = "welcome_message">Welcome to Steam Rewards Offical Website!</h1></center>
+               
+               <?php echo $message; ?><br>
+               <?php echo form_errors($errors); ?>
+               <form action = "forms-with-validation.php" method="post" >
+               Username: <input type="text" name="username_data" value=<?php echo htmlspecialchards($username)?>; >
+               Password: <input type="password" name="password_data" value="" >
+               Email: <input type="email" name="email_data" value="" ><br><br>
+               </form>
             </div>
          </div>
       </section>

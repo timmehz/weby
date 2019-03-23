@@ -46,13 +46,13 @@
                      <a class="nav-link" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="earn.php">Earn</a>
+                     <a class="nav-link" href="earn.php5">Earn</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="discord.php">Discord</a>
+                     <a class="nav-link" href="discord.php5">Discord</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="login.php">Login/Signup</a>
+                     <a class="nav-link" href="login.php5">Login/Signup</a>
                   </li>
                </ul>
             </div>

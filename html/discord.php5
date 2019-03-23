@@ -4,51 +4,21 @@
 		error_reporting(E_ALL);
 		/****Error Reporting End****/
 ?>
-<?php
-               require_once("inc/redirect.php");
-               require_once("inc/validation_functions.php");
-               
-               $errors = array();
-               $username_data = "";
-               $password_data = "";
-               $email_data = "";
-               $message = "";
-               
-               if(isset($_POST["submit"])){
-					// form was submitted
-					$username = trim($_POST["username_data"]);
-					$password = trim($_POST["password_data"]);
-					$email = trim($_POST["email_data"]);
-					// validations
-					$fields_required = array("username_data", "password_data", "email_data");
-					
-					foreach($fields_required as $field){
-							$value = trim($_POST[$field]);
-							if(!is_required($value)){
-								$errors["$field"] = ucfirst($field) . " cannot be blank.";
-							}
-					}
-					// using an associative array
-					$fields_with_max_lengths = array("username_data" => 20, "password_data" => 20, "email_data" => 20);
-					validate_max_lengths($fields_with_max_lengths);
-					
-					if (empty($errors)){
-						// try to login
-						if ($username == "{$username_data}" && $password == "{$password_data}" && email == "{$email_data}"){
-							// successful login
-							redirect_to("index.php");
-							} else{
-								$message = "Data you have entered is not correct."
-							} else{
-								$username = "";
-								$password = "";
-								$email = "";
-								$message = "Please login";
-							}
-					}
-			    }
-?>
 <!DOCTYPE html>
+<html>
+	
+<head>
+	<link rel="shortcut icon" href="imgs/Steam_Rewards_Logo.png" />
+	<title>Steam Rewards-Home</title>
+	<link rel = "stylesheet" href = "css/welcome_website.css">
+</head>
+
+<body>
+	<center><h1 class = "welcome_message">Welcome to Steam Rewards Offical Website!</h1></center>
+</body>
+
+</html>
+<!doctype html>
 <html lang="en">
    <head>
       <!-- Required meta tags -->
@@ -56,9 +26,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <!-- Bootstrap CSS -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link rel="shortcut icon" href="imgs/Steam_Rewards_Logo.png" />
-	  <title>Steam Rewards-Home</title>
-	  <link rel = "stylesheet" href = "css/welcome_website.css">
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="css/style.css">
+      <title>CS 30 - HTML & Bootstrap</title>
    </head>
    <body>
       <!-- Navigation -->
@@ -76,13 +46,13 @@
                      <a class="nav-link" href="index.html">Home</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="earn.php">Earn</a>
+                     <a class="nav-link" href="earn.php5">Earn</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="discord.php">Discord</a>
+                     <a class="nav-link" href="discord.php5">Discord</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="login.php">Login/Signup</a>
+                     <a class="nav-link" href="login.php5">Login/Signup</a>
                   </li>
                </ul>
             </div>
@@ -94,14 +64,6 @@
             <div class="row">
             <div class="col" align="center">
                <!-- Content Here -->
-               
-               <?php echo $message; ?><br>
-               <?php echo form_errors($errors); ?>
-               <form action = "forms-with-validation.php" method="post" >
-               Username: <input type="text" name="username_data" value=<?php echo htmlspecialchards($username)?>; >
-               Password: <input type="password" name="password_data" value="" >
-               Email: <input type="email" name="email_data" value="" ><br><br>
-               </form>
             </div>
          </div>
       </section>
